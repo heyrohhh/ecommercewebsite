@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <%- include('./partials/head') %>
+
+    <style>
+       .product{
+              display: flex;
+              flex-direction: row;
+       }
+       .detail{
+        margin-left: 5%;
+       }
+    </style>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    
+    <div class="container mt-4" style="width: 100%; border: none;">
+                        <div class="card" style="border: none;">
+                          <div class="product">
+                            <div class="img">
+                                <img src="<%= product.Pimg %>" class="card-img-top" id="img" alt="..." style="border-radius: 8px; height:25rem; max-width:25rem;">
+                            </div>
+                            <div class="detail mt-4" style="width: 50%;">
+                                <h5 class="card-title" id="Pname" style="text-align: center;"><%= product.Pname %></h5>
+                                <p class="card-text" id="discription"> <%= product.Pdiscripton %></p>
+                                <p class="card-text" id="price">Price: $<%= product.Pprice %></p>
+                                <p class="card-text" id="detail">Product Detail: <%= product.Pdetail %></p>
+                                <p class="card-text">Product Code: <%= product.Pcode %></p>
+                                <button class="btn btn-primary">Add to Cart</button>
+                                <span id="msz"></span>
+                            </div>
+                          </div>
+                        </div>
+                        
+     </div> 
+    
+
+          <script>
+             const img = document.getElementById('img');
+             const name = document.getElementById('Pname');
+             const discription = document.getElementById('detail');
+             const price = document.getElementById('price');
+             const msz = document.getElementById('msz')
+            //  const priceValue = price.innerText.replace('$', '');
+            //  const finalPrice = parseFloat(priceValue)
+             function addToCart(){
+    
+                const cartItem = {
+                      Image: img.src,
+                      Discription: discription.innerText,
+                      Price: price.innerText,
+                      Name: name.innerText,
+             }
+             let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+             cartItems.push(cartItem);
+             localStorage.setItem('cartItems', JSON.stringify(cartItems));
+             alert('Item added to cart!');
+              console.log(localStorage)
+             }
+             document.addEventListener('DOMContentLoaded', function () {
+        const addToCartButton = document.querySelector('.btn-primary');
+        addToCartButton.addEventListener('click', addToCart);
+    });
+          </script>
+
+    <%- include('./partials/script') %>
+    <%- include('./partials/searchscript') %>
+</body>
+</html>
+
+

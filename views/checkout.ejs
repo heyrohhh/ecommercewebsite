@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <title>Signup</title>
+        <style>
+            body {
+                background-color: rgb(213, 188, 236);
+            }
+
+            .container {
+                width: 40%;
+                box-shadow: 3px 3px 3px 4px rgb(98, 52, 145);
+                border-radius: 8px;
+                padding: .5rem;
+                background-color: rgb(229, 212, 246);
+            }
+        </style>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+
+        <div class="container mt-4">
+            <h1 style="text-align: center;">Delivery Address</h1>
+            <form action="checkout" method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" placeholder="Write your full Name" name="name" id="name"
+                        aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="streetAddress" class="form-label">Address</label>
+                    <textarea class="form-control" placeholder="Please Include House Number, Street Number, Area" name="address" id="address"
+                        aria-describedby="emailHelp"> </textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="State" class="form-label">State</label>
+                    <input type="text" class="form-control" placeholder="Write your State Name" id="state" name="state"
+                        aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="City" class="form-label">City</label>
+                    <input type="text" class="form-control" placeholder="Write your City Name" id="city" name="city"
+                        aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="State" class="form-label">Pin Code</label>
+                    <input type="number" class="form-control" placeholder="Write your Pin Code" id="pincode" name="pincode"
+                        aria-describedby="emailHelp">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; background-color: white; color: black;">Place Order</button>
+            </form>
+
+            
+        </div>
+
+        <%- include('./partials/script') %>
+</body>
+
+</html>

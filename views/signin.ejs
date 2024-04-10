@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <title>Signin</title>
+    <style>
+     body{
+        background-color: rgb(213, 188, 236);
+      }
+      .container{
+        width: 40%;
+        box-shadow: 3px 3px 3px 4px rgb(98, 52, 145);
+        border-radius: 8px;
+        padding: .5rem;
+        background-color: rgb(229, 212, 246);
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+
+    <div class="container mt-4">
+      <h4 style="text-align: center;"><u>Welcome on Fashion Grow</u></h4>
+      <h6 style="text-align: center;">Please Make a Login</h6>
+      <form action="/user/signin" method="post">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Email address</label
+          >
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+          <div id="emailHelp" class="form-text">
+            We'll never share your email with anyone else.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            name="password"
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+    <%- include('./partials/script') %>
+  </body>
+</html>

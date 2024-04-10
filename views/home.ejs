@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Grow Men's Section</title>
+    <%- include('./partials/head') %>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+
+    <!-- for cursoul -->
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" >
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="3000">
+            <img src="/kids/kcursoul/kc1.webp" class="d-block w-100"  alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="/kids/kcursoul/kc2.avif" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="/kids/kcursoul/kc3.webp" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    <!-- cursoul end -->
+    <div id="carouselExampleAutoplaying" class="carousel slide mt-4" data-bs-ride="carousel" >
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="2000">
+          <img src="/websImages/dc1.avif" class="d-block w-100"  alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="/websImages/dc2.avif" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="/websImages/dc3.avif" class="d-block w-100" alt="...">
+        </div>
+      </div>
+    </div>
+    <img src="/websImages/tc1.avif" width="100%">
+
+    <div class="row mt-1 justify-content-center">
+      <% products.forEach(product => { %>
+      <div class="col-md-3 mt-3  ms-1">
+        <div class="card" style="width: 18rem;">
+          <img src="<%= product.Pimg %>" class="card-img-top" alt="..." >
+          <div class="card-body">
+            <h5 class="card-title"><%= product.Pname %></h5>
+            <p class="card-text"> <%= product.Pdiscripton %></p>
+            <p class="card-text">Price: $<%= product.Pprice %></p>
+            <a href="/prodetail/<%= product._id %>"><button class="btn btn-primary">View Product</button> </a>
+          </div>
+          
+        </div>
+      </div>
+      <% }); %>
+    </div>
+    
+  
+     
+
+
+    <%- include('./partials/footer') %> 
+    <%- include('./partials/script') %>
+    <%- include('./partials/searchscript') %>
+  
+</body>
+</html>

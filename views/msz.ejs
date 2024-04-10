@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <%- include('./partials/head') %>
+        <style>
+            .col-md-2 {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 100%;
+            }
+
+            .card {
+                margin-left: 1%;
+                display: flex;
+                flex-direction: row;
+            }
+
+            .fa-solid {
+                right: 4px;
+                top: 2px;
+            }
+        </style>
+
+</head>
+
+<body style="background-color: aliceblue;">
+    <%- include('./partials/nav') %>
+             <div class="container mt-5">
+                <div class="card text-center">
+                    <div class="card-header">
+                      <ul class="nav nav-tabs card-header-tabs">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="true" href="#">Active</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/">Home</a>
+                        </li>
+                        
+                      </ul>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Thank You❤️For Shopping</h5>
+                      <p class="card-text">Your Order Will Reach You With in 5 working Days</p>
+                      <a href="/" class="btn btn-primary">Home</a>
+                    </div>
+                  </div>
+             </div>
+    
+
+    <%- include('./partials/script') %>
+</body>
+
+</html>
